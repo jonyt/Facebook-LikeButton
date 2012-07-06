@@ -36,10 +36,11 @@
         </div>
         
 	    <div class="content">
-	            <div id="likeButton"></div>
+	            <div id="likeButton1"></div>	            
 	            <div class="alert alert-success">
 	                Thanks for clicking Like! <a class="close" href="#">&times;</a>
 	            </div>
+	            <div id="likeButton2"></div>
 	    </div>
 
 		<script type="text/javascript" src="fb_like.js"></script>
@@ -60,11 +61,12 @@
 			        width: 550
 			    };
 			
-			var fbl1 = LikeButton.create('http://jonyt.github.com/Facebook-LikeButton/', buttonParams, likeCallback, 242461912538446, '//jonyt.github.com/Facebook-LikeButton/channel.html');			
-			document.getElementById('likeButton').appendChild(fbl1);			
+			var fbl1 = LikeButton.create('http://jonyt.github.com/Facebook-LikeButton/', buttonParams, likeCallback, 242461912538446, '//jonyt.github.com/Facebook-LikeButton/channel.html');
+			document.getElementById('likeButton1').appendChild(fbl1);									
 			
-			var fbl2 = LikeButton.create('http://jonyt.github.com/Facebook-LikeButton/', buttonParams);			
-			document.getElementById('likeButton').appendChild(fbl2);			
+			buttonParams.hasSendButton = false;
+            var fbl2 = LikeButton.create('http://jonyt.github.com/Facebook-LikeButton/', buttonParams);						
+			document.getElementById('likeButton2').appendChild(fbl2);			
 		</script>
 	</body>
 </html>
