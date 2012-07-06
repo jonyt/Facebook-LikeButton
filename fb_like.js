@@ -47,10 +47,12 @@ LikeButton = (function(){
 		
 		var likeButton = document.createElement('div');
 		likeButton.setAttribute('class', 'fb-like');
-		likeButton.setAttribute('data-href', params.url);
-		likeButton.setAttribute('data-send', params.hasSendButton);
 		likeButton.setAttribute('data-width', 450);
+		likeButton.setAttribute('data-href', params.url);
+		likeButton.setAttribute('data-send', params.hasSendButton);		
 		likeButton.setAttribute('data-show-faces', params.hasFaces);
+		likeButton.setAttribute('data-action', params.verb);		
+		likeButton.setAttribute('data-layout', params.layout);		
 		
 		return likeButton;
 	}
