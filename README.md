@@ -20,4 +20,4 @@ var fbl = LikeButton.create('http://www.facebook.com');
 document.getElementsByTagName('body')[0].appendChild(fbl);
 ```
 
-*Note*: available settings are hasFaces (boolean), hasSendButton (boolean), layout (one of standard, button_count, box_count) and verb (like or recommend).
+*Note*: available settings are hasFaces (`boolean`), hasSendButton (`boolean`), layout (one of `standard`, `button_count`, `box_count`) and verb (`like` or `recommend`).
