@@ -25,7 +25,8 @@ LikeButton = (function(){
 		hasFaces: false,
 		hasSendButton: false,
 		layout: 'standard',
-		verb: 'like'
+		verb: 'like',
+		width: 450
 	};		
 	
 	function createFbmlButton(likeCallback, appId, channelFileUrl){
@@ -47,23 +48,25 @@ LikeButton = (function(){
 		
 		var likeButton = document.createElement('div');
 		likeButton.setAttribute('class', 'fb-like');
+		likeButton.setAttribute('data-width', params.width);
 		likeButton.setAttribute('data-href', params.url);
-		likeButton.setAttribute('data-send', params.hasSendButton);
-		likeButton.setAttribute('data-width', 450);
+		likeButton.setAttribute('data-send', params.hasSendButton);		
 		likeButton.setAttribute('data-show-faces', params.hasFaces);
+		likeButton.setAttribute('data-action', params.verb);		
+		likeButton.setAttribute('data-layout', params.layout);				
 		
 		return likeButton;
 	}
 	
 	function createIframeButton(){	
 		var iframe = document.createElement('iframe');
-		iframe.src = '//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(params.url) + '&send=false&layout=' + params.layout + '&width=450&show_faces=' + params.hasFaces + '&action=' + params.verb + '&colorscheme=light&font';
+		iframe.src = '//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(params.url) + '&send=false&layout=' + params.layout + '&width=450&show_faces=' + params.hasFaces + '&action=' + params.verb + '&colorscheme=light&font' + '&width=' + params.width;
 		iframe.style.border = 'none';
 		iframe.style.overflow = 'hidden';
-		iframe.style.width = '450px';
+		iframe.style.width = params.width + 'px';
 		iframe.setAttribute('scrolling', 'no');
 		iframe.setAttribute('frameBorder', 0);
-		iframe.setAttribute('allowTransparency', true);
+		iframe.setAttribute('allowTransparency', true);		
 		
 		return iframe;	
 	}
@@ -126,6 +129,9 @@ LikeButton = (function(){
 				}
 				if (typeof buttonParams.verb === 'string' && ['like', 'recommend'].indexOf(buttonParams.verb) > -1){
 					params.verb = buttonParams.verb;
+				}
+				if (typeof buttonParams.width === 'number' && buttonParams.width > 0){
+					params.width = buttonParams.width;
 				}
 			}									
 			
