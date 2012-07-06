@@ -45,14 +45,22 @@
 		<script type="text/javascript" src="fb_like.js"></script>
 		<script type="text/javascript">
 			var likeCallback = function(response){
-				var alert = document.getElementsByClassName('alert')[0],
-				    closeButton = document.getElementsByClassName('close')[0];
-				alert.style.display = 'block';    
-                closeButton.onclick = function(){
-                    this.parentNode.style.display = 'none';
-                };
-			};
-			var fbl = LikeButton.create('http://jonyt.github.com/Facebook-LikeButton/', {hasSendButton: true, hasFaces: true, layout: 'button_count', verb: 'recommend'}, likeCallback, 242461912538446, '//jonyt.github.com/Facebook-LikeButton/channel.html');			
+				    var alert = document.getElementsByClassName('alert')[0],
+				        closeButton = document.getElementsByClassName('close')[0];
+				    alert.style.display = 'block';    
+                    closeButton.onclick = function(){
+                        this.parentNode.style.display = 'none';
+                    };
+			    },
+			    buttonParams = {
+			        hasSendButton: true, 
+			        hasFaces: true, 
+			        layout: 'button_count', 
+			        verb: 'recommend', 
+			        width: 550
+			    };
+			
+			var fbl = LikeButton.create('http://jonyt.github.com/Facebook-LikeButton/', buttonParams, likeCallback, 242461912538446, '//jonyt.github.com/Facebook-LikeButton/channel.html');			
 			document.getElementById('likeButton').appendChild(fbl);			
 		</script>
 	</body>
