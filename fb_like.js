@@ -55,6 +55,8 @@ LikeButton = (function(){
 		likeButton.setAttribute('data-action', params.verb);		
 		likeButton.setAttribute('data-layout', params.layout);		
 		
+		console.log(likeButton);
+		
 		return likeButton;
 	}
 	
@@ -67,6 +69,8 @@ LikeButton = (function(){
 		iframe.setAttribute('scrolling', 'no');
 		iframe.setAttribute('frameBorder', 0);
 		iframe.setAttribute('allowTransparency', true);
+		
+		console.log(iframe);
 		
 		return iframe;	
 	}
