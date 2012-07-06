@@ -131,7 +131,7 @@ LikeButton = (function(){
 			
 			// Create an IFrame if nothing fancy is needed, otherwise create an HTML5 like button
 			return (params.hasSendButton || (typeof likeCallback === 'function' && typeof appId === 'number') ?
-				createFbmlButton(likeCallback, appId) :
+				createFbmlButton(likeCallback, appId, channelFileUrl) :
 				createIframeButton()
 			);			
 		}
